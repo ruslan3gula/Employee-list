@@ -10,7 +10,9 @@ class App extends Component {
   }
 
   createNewEmployee = newEmployee => {
-    this.setState({ employees: newEmployee });
+    this.setState(prevState => ({
+      employees: [...prevState.employees, newEmployee]
+    }));
   };
   render() {
     return (
@@ -18,7 +20,12 @@ class App extends Component {
         <EmployeeList createNewEmployee={this.createNewEmployee} />
         <ul>
           {this.state.employees.map(employee => (
-            <li>{employee}</li>
+            <li>
+              {employee.id}
+              {employee.name}
+              {employee.surname}
+              {employee.department}
+            </li>
           ))}
         </ul>
       </div>

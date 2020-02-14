@@ -19,6 +19,9 @@ class EmployeeList extends Component {
   }
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.target.id]: event.target.value });
+    this.setState({ [event.target.department]: event.target.value });
+    this.setState({ [event.target.surname]: event.target.value });
   };
 
   handleSubmit = event => {
@@ -48,6 +51,7 @@ class EmployeeList extends Component {
               label="NAME"
               variant="outlined"
               onChange={this.handleChange}
+              value={this.state.name}
             />
             <TextField
               name="surname"
@@ -55,6 +59,7 @@ class EmployeeList extends Component {
               label="SURNAME"
               variant="outlined"
               onChange={this.handleChange}
+              value={this.state.surname}
             />
             <TextField
               name="department"
@@ -62,6 +67,7 @@ class EmployeeList extends Component {
               label="DEPARTMENT"
               variant="outlined"
               onChange={this.handleChange}
+              value={this.state.department}
             />
             <Button type="submit">add employee</Button>
           </div>
