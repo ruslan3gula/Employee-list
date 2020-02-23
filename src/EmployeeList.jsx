@@ -17,6 +17,7 @@ class EmployeeList extends Component {
     super(props);
     this.state = { id: "", name: "", surname: "", department: "" };
   }
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
     this.setState({ [event.target.id]: event.target.value });
