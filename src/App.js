@@ -25,6 +25,7 @@ import TextField from "@material-ui/core/TextField";
 // }));
 
 class App extends Component {
+  //tttttttttttttttttttt
   constructor(props) {
     super(props);
     this.state = {
@@ -32,23 +33,23 @@ class App extends Component {
         { id: "01", name: "John", surname: "V", department: "LOG" },
         { id: "02 ", name: "Ruslan", surname: "G", department: "MFO" },
         { id: "03", name: "Andriy", surname: "M", department: "DEV" },
-        { id: "04", name: "Jupiter", surname: "O", department: "ENG" }
+        { id: "04", name: "Jupiter", surname: "O", department: "ENG" },
       ],
-      filtered: []
+      filtered: [],
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     this.setState({
-      filtered: this.state.employees
+      filtered: this.state.employees,
     });
   }
 
-  createNewEmployee = newEmployee => {
-    this.setState(prevState => ({
+  createNewEmployee = (newEmployee) => {
+    this.setState((prevState) => ({
       employees: [...prevState.employees, newEmployee],
-      filtered: this.state.employees
+      filtered: this.state.employees,
     }));
 
     console.log("Employee");
@@ -69,14 +70,14 @@ class App extends Component {
     });
 
     this.setState(() => ({
-      employees: [...sortedArray]
+      employees: [...sortedArray],
     }));
   };
 
   handleChange(e) {
     const searchText = e.target.value ? e.target.value.toLowerCase() : "";
 
-    const filteredEmployee = this.state.employees.filter(employee => {
+    const filteredEmployee = this.state.employees.filter((employee) => {
       const hasName = employee.name.toLowerCase().includes(searchText);
       const hasSurname = employee.surname.toLowerCase().includes(searchText);
       const hasDepartment = employee.department
@@ -86,7 +87,7 @@ class App extends Component {
     });
 
     this.setState(() => ({
-      filtered: filteredEmployee
+      filtered: filteredEmployee,
     }));
   }
 
